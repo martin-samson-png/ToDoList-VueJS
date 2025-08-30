@@ -42,12 +42,19 @@ liste, permettra de masquer les tâches terminées.
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { onMounted, ref } from "vue";
 
-const tasks = ref([
-  { title: "faire la vaisselle", completed: false, date: 1478465 },
-]);
+const tasks = ref([]);
 const newTask = ref("");
+onMounted(() => {
+  const saved = localStorage.getItem("tasks");
+  if (saved) {
+    tasks.value = JSON.parse(saved);
+  }
+});
+const saveTask = () => {
+  localStorage.setItem("tasks", JSON.stringify(tasks.value));
+};
 const date = new Date().toISOString().split("T")[0];
 
 const addTask = () => {
@@ -61,6 +68,7 @@ const addTask = () => {
     date: date,
   });
   newTask.value = "";
+  saveTask();
 };
 
 const deleteTask = (task) => {
