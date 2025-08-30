@@ -88,7 +88,7 @@ ul {
   padding: 0;
 }
 .card {
-  background-color: #faf2ea;
+  background-color: #ffffff;
   display: flex;
   flex-direction: column;
   padding: 0 2.5rem 5rem 2.5rem;
@@ -109,12 +109,13 @@ ul {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: white;
+  background-color: #f2f0ef;
   border-radius: 30px;
   height: 4.2rem;
   padding-left: 0.5rem;
 
   input {
+    background-color: #f2f0ef;
     font-size: 25px;
     padding-right: 2rem;
     border-radius: 30px;
