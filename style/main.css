@@ -1,0 +1,9 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+#app {
+  padding: 3rem;
+  min-height: 100vh;
+  background: linear-gradient(to left, #7b1fa2, #4a148c);
+}
